@@ -18,15 +18,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
 
-  goToUrlUsuario(){
-    this.document.location.href = "./usuario";
+  goToUrlPersona(){
+    this.document.location.href = "./persona";
   }
 
-  goToUrlDepartamento(){
-    this.document.location.href = "./departamento";
-  }
-
-  goToUrlCargo(){
-    this.document.location.href = "./cargo";
+  goToUrlMascota(){
+    this.document.location.href = "./mascota";
   }
 }
