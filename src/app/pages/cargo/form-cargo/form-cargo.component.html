@@ -1,0 +1,33 @@
+<h5 class="mb-5 text-lg font-bold tracking-tight text-gray-900 dark:text-white ">Mantenimientos de Cargo</h5>
+<form [formGroup]="formCargo" class="w-full" (ngSubmit)="onSubmit()" novalidate>
+  <div class="mb-5">
+    <input type="hidden" id="idCargo" class="form-control" formControlName="idCargo">
+  </div>
+  <div class="mb-5">
+    <label for="codigoCargo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Código Cargo:</label>
+    <input type="text" id="codigoCargo" class="form-control" formControlName="codigoCargo">
+    @if (formCargo.get('codigoCargo')?.hasError('required') && formCargo.get('codigoCargo')?.touched) {
+    <div class="form-error">El codigo del cargo es requerido</div>
+    }
+  </div>
+  <div class="mb-5">
+    <label for="nombreCargo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Cargo:</label>
+    <input type="text" id="nombreCargo" class="form-control" formControlName="nombreCargo">
+  </div>
+  <div class="mb-5">
+    <label for="activo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Activo:</label>
+    <input type="checkbox" id="activo" class="form-control" formControlName="activo">
+    @if (formCargo.get('activo')?.hasError('required') && formCargo.get('activo')?.touched) {
+    <div class="form-error">El estado del cargo es requerido</div>
+    }
+  </div>
+  <div class="mb-5">
+    <input type="hidden" id="idUsuarioCreacion" class="form-control" formControlName="idUsuarioCreacion">
+  </div>
+  <div class="flex justify-end items-center mb-6">
+    <button type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-small px-3 py-2 text-center mb-2">Guardar</button>
+    <button type="button" (click)="onClose()"
+    class="text-white ms-2 bg-gray-700 hover:bg-gray-800 font-small px-3 py-2 text-center mb-2">Cancelar</button>
+  </div>
+</form>
